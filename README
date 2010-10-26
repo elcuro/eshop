@@ -1,0 +1,28 @@
+Croogo Eshop  plugin
+------------------------------
+Very simple eshop plugin for Croogo,
+momentary without basket feature
+
+How to install
+------------------------------
+- Log in to admin panel
+- Go to Extensions > Plugins page
+- Upload the zip file (available here)
+- Click on tick/cross icon of 'Eshop' for activating or deactivating the plugin
+
+Setting
+------------------------------
+List of all eshop suppliers in Extensions->Esho->Suppliers.
+Min. one supplier required
+
+How to use
+------------------------------
+Admin:
+Your node must be of 'product' type. You can admin
+eshop items by clicking on Eshop tab in Node edit page
+Here you can add, modify or delete eshop items
+
+Use:
+All items are attached to 'product' node by plugin behavior,
+so you can use it in your controllers or views in array 'EshopItems' in
+node result data
