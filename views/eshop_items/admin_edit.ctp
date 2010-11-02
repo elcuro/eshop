@@ -16,6 +16,7 @@
                         echo $form->input('vat', array('label' => __('VAT (in %)', true)));
                         echo $form->input('price_without_vat', array('label' => __('Price without VAT', true)));
                         echo $form->input('delivery_days', array('label' => __('Delivery (days)', true)));
+                        echo $form->input('on_stock', array('label' => __('On stock (pcs.)', true)));
                         echo $form->input('supplier_price', array('label' => __('Supplier price', true)));
                         echo $form->input('supplier_order_code', array('label' => __('Supplier order code', true)));
                         echo $form->input('discount_percentage', array('label' => __('Discount (in %)', true)));

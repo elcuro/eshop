@@ -30,6 +30,7 @@ class EshopItemsSchema extends CakeSchema {
             'price_without_vat' => array('type' => 'float', 'null' => false),
             'price_with_vat' => array('type' => 'float', 'null' => true),
             'delivery_days' => array('type' => 'integer', 'null' => true, 'length' => 4, 'default' => 14),
+            'on_stock' => array('type' => 'integer', 'null' => true, 'length' => 4, 'default' => 2),
             'discount_percentage' => array('type' => 'float', 'null' => true),
             'note' => array('type' => 'text', 'null' => true),
             'created' => array('type' => 'timestamp', 'null' => false, 'length' => NULL),
