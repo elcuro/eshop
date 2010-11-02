@@ -44,12 +44,12 @@ class EshopBehavior extends ModelBehavior {
                 if ($primary && isset($results[0][$model->alias]['id']) && isset($results[0][$model->alias]['type'])) {
                     foreach ($results AS $i => $result) {
                         if ($results[$i][$model->alias]['type'] == 'product') {
-                            $results[$i]['EshopItems'] = $this->_getItems($model, $result[$model->alias]['id']);
+                            $results[$i] = $this->_bindItems($model, $result);
                         }
                     }
                 } elseif (isset($results[$model->alias])) {
                     if ($results[$model->alias]['type'] == 'product') {
-                        $results['EshopItems'] = $this->_getItems($model, $results[$model->alias]['id']);
+                        $results = $this->_bindItems($model, $result);
                     }
                 }
 
@@ -64,20 +64,24 @@ class EshopBehavior extends ModelBehavior {
          * @param integer $nodeid
          * @return array
          */
-        private function _getItems(&$model, $node_id) {
+        private function _bindItems(&$model, $data) {
 
                 if (!is_object($this->Item)) {
                         $this->Item = ClassRegistry::init('Eshop.EshopItem');
                 }
+
                 // unbind unnecessary models from EshopItem
                 $this->Item->unbindModel(array(
                     'belongsTo' => array('EshopSupplier')
                 ));
+                // bind all related items
                 $items = $this->Item->find('all', array(
-                    'conditions' => array('EshopItem.node_id' => $node_id)
+                    'conditions' => array('EshopItem.node_id' => $data[$model->alias]['id']),
+                    'order' => array('EshopItem.price_without_vat ASC')
                 ));
+                $data['EshopItems'] = $items;
                 
-                return $items;
+                return $data;
 
         }
 
@@ -87,7 +91,7 @@ class EshopBehavior extends ModelBehavior {
          * @param object $model
          * @return void
          */
-        public function  aftereDelete(&$model) {
+        public function  afterDelete(&$model) {
                 parent::afterDelete($model);
 
                 if (!is_object($this->Item)) {
