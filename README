@@ -1,8 +1,12 @@
 Croogo Eshop  plugin
 ------------------------------
-Very simple eshop plugin for Croogo,
-momentary without basket feature and orders evidence.
-Only base items
+Very simple plugin for Croogo, which is largery based on my requirements for simply eshop.
+
+
+Requirements
+------------------------------
+- jquery
+
 
 How to install
 ------------------------------
@@ -10,26 +14,41 @@ How to install
 - Go to Extensions > Plugins page
 - Upload the zip file (available here)
 - Click on tick/cross icon of 'Eshop' for activating or deactivating the plugin
+- In Croogo App controller add to helpers array: 'Number'
 
-Setting
+All tables are created automatically by config/schema files
+
+
+Settings -> Configure
 ------------------------------
-List of all eshop suppliers in Extensions->Esho->Suppliers.
+Statuses - comma separated possible statuses of order
+Payement - comma separated payement methods in order for
+Shipping - comma separated shipping methods in order form
+
+
+Settings -> Suppliers
+------------------------------
+List of all eshop suppliers.
 Min. one supplier required
+
 
 How to use
 ------------------------------
 Admin:
 Your node must be of 'product' type. You can admin
 eshop items by clicking on Eshop tab in Node edit page
-Here you can add, modify or delete eshop items
+Here you can add, modify or delete eshop items (prices)
 
 Use:
 All items are attached to 'product' node by plugin behavior,
 so you can use it in your controllers or views in array 'EshopItems' in
 node result data
 
+Orders:
+Every order is send by mail to orderer and to mail from Settings->Configure
+
+
 Next steps
 -------------------------------
-- basket feature
 - orders evidence
 - agragators feeds

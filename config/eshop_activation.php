@@ -50,7 +50,7 @@ class EshopActivation {
                 if (!$cake_schema_files = $this->_listSchemas($this->SchemaDir))
                         return false;
 
-                // create table for each schema
+                // create table for each schema (if not exists)
                 foreach ($cake_schema_files as $schema_file) {
                         $schema_name = substr($schema_file, 0, -4);
                         $schema_class_name = Inflector::camelize($schema_name).'Schema';
@@ -99,7 +99,9 @@ class EshopActivation {
          * @return void
          */
         public function onActivation(&$controller) {
-                $controller->Croogo->addAco('EshopItems');
+                
+                // set Aco
+                $controller->Croogo->addAco('EshopEshopItems');
                 $controller->Croogo->addAco('EshopItems/admin_index');
                 $controller->Croogo->addAco('EshopItems/admin_add');
                 $controller->Croogo->addAco('EshopItems/admin_edit');
@@ -109,6 +111,32 @@ class EshopActivation {
                 $controller->Croogo->addAco('EshopSuppliers/admin_add');
                 $controller->Croogo->addAco('EshopSuppliers/admin_edit');
                 $controller->Croogo->addAco('EshopSuppliers/admin_delete');
+                $controller->Croogo->addAco('EshopBasket');
+                $controller->Croogo->addAco('EshopBasket/add', array('registered', 'public'));
+                $controller->Croogo->addAco('EshopBasket/view', array('registered', 'public'));
+                $controller->Croogo->addAco('EshopBasket/delete', array('registered', 'public'));
+                $controller->Croogo->addAco('EshopBasket/recalc', array('registered', 'public'));
+                $controller->Croogo->addAco('EshopOrders');
+                $controller->Croogo->addAco('EshopOrders/add', array('registered', 'public'));
+
+                // set default config
+                $statuses = 'Waiting for acceptacion,Accepted,Canceled,Sended,
+                        Delivered,Rejected';
+                $payement = 'Cash on delivery,Proforma invoice,Personally';
+                $shipping = 'Cash on delivery,Curier,Personally';
+
+                $controller->Setting->write('Eshop.statuses', $statuses, array(
+                    'editable' => 1, 'description' => __('Types of order statuses', true))
+                );
+                $controller->Setting->write('Eshop.payement', $payement, array(
+                    'editable' => 1, 'description' => __('Types of payement method', true))
+                );
+                $controller->Setting->write('Eshop.shipping', $shipping, array(
+                    'editable' => 1, 'description' => __('Shiping methods', true))
+                );
+                $controller->Setting->write('Eshop.email', Configure::read('Site.email'), array(
+                    'editable' => 1, 'description' => __('All orders will be sended to orderer email and to this email also', true))
+                );
 
         }
 
@@ -128,9 +156,9 @@ class EshopActivation {
                 foreach ($cake_schema_files as $schema_file) {
                         $schema_name = substr($schema_file, 0, -4);
                         $table_name = $schema_name;
-                        if(!$this->db->execute('DROP TABLE '.$table_name)) {
+                        /*if(!$this->db->execute('DROP TABLE '.$table_name)) {
                                 return false;
-                        }
+                        }*/
                 }
                 return true;
 
@@ -146,6 +174,7 @@ class EshopActivation {
         public function onDeactivation(&$controller) {
                 $controller->Croogo->removeAco('EshopItems');
                 $controller->Croogo->removeAco('EshopSuppliers');
+                $controller->Croogo->removeAco('EshopBasket');
         }
 
         /**
