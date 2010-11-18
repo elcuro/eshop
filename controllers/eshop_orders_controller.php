@@ -73,7 +73,8 @@ class EshopOrdersController extends EshopAppController {
                                 $this->Email->bcc = array(Configure::read('Eshop.email'));
                                 $this->Email->subject = '[' . Configure::read('Site.title') . '] ' . __('New order', true);
                                 $this->Email->template = 'confirm_order';
-                                $this->set('calculated_items', $this->EshopItem->findCalculatedBasketItems($items));
+                                $this->Email->sendAs = 'html';
+                                $this->set('items', $this->EshopItem->findCalculatedBasketItems($items));
                                 $this->set('order_id', $this->EshopOrder->id);
                                 $this->Email->send();
 
