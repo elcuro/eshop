@@ -42,19 +42,21 @@
                                 </tr>
                                 <?php
                                 } ?>
-                        <tr>
+                        <tr class="eshop-basket-sum">
                                 <td colspan="2">&nbsp;</td>
                                 <td id="sum-without-vat"><?php echo $number->currency($sum_without_vat, 'EUR'); ?></td>
                                 <td id="sum-with-vat"><strong><?php echo $number->currency($sum_with_vat, 'EUR'); ?></strong></td>
                         </tr>
                 </table>
 
+        <div class="eshop-btns">
                 <div class="eshop-btn back">
                         <strong><?php echo $html->link(__('Back to eshop', true), $referer);?></strong>
                 </div>
                 <div class="eshop-btn forward">
                         <strong><?php echo $html->link(__('Order!', true), array('plugin' => 'eshop', 'controller' => 'eshop_orders', 'action' => 'add'));?></strong>
                 </div>
+        </div>
         <?php } else {
                 __('Basket is empty');?>
                 <div class="eshop-btn back">
