@@ -24,6 +24,7 @@ Settings -> Configure
 Statuses - comma separated possible statuses of order
 Payement - comma separated payement methods in order for
 Shipping - comma separated shipping methods in order form
+Email - all orders will be sended to this email also
 
 
 Settings -> Suppliers
@@ -40,12 +41,13 @@ eshop items by clicking on Eshop tab in Node edit page
 Here you can add, modify or delete eshop items (prices)
 
 Use:
-All items are attached to 'product' node by plugin behavior,
+All items are attached to 'product' type node by plugin behavior,
 so you can use it in your controllers or views in array 'EshopItems' in
-node result data
+node data.
+For showing item directly add 
+<?php echo $this->element('eshop_items_form', array('items' => $node['EshopItems'], 'plugin' => 'eshop')) ?>
+to your view file e.g. /app/views/themed/mytheme/nodes/view_product.ctp
 
-Orders:
-Every order is send by mail to orderer and to mail from Settings->Configure
 
 
 Next steps
