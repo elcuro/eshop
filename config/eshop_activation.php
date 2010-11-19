@@ -176,6 +176,7 @@ class EshopActivation {
                 $controller->Croogo->removeAco('EshopItems');
                 $controller->Croogo->removeAco('EshopSuppliers');
                 $controller->Croogo->removeAco('EshopBasket');
+                $controller->Croogo->removeAco('EshopOrders');
         }
 
         /**
