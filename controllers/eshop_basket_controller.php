@@ -108,5 +108,20 @@ class EshopBasketController extends EshopAppController {
 
         }
 
+        /**
+         * Baset summary (called from basket_summary element)
+         *
+         * @return void
+         */
+        public function basketSummary() {
+
+                //$this->autoRender = FALSE;
+
+                $items = $this->Session->read("Eshop.items");
+                $this->set('basket_summary', $this->EshopItem->findCalculatedBasketItems($items));
+                $this->layout = 'ajax';
+
+        }
+
 }
 ?>

@@ -70,17 +70,21 @@ class EshopItem extends EshopAppModel {
                 $prices_without_vat = array();
                 $prices_with_vat = array();
                 $items = array();
-                foreach ($items_from_session as $item_id => $item_count) {
-                        $data = $this->findById($item_id);
-                        $data[$this->name]['sum_without_vat'] = $prices_without_vat[] = $data[$this->name]['price_without_vat'] * $item_count;
-                        $data[$this->name]['sum_with_vat'] = $prices_with_vat[] = $data[$this->name]['price_with_vat'] * $item_count;
-                        $data[$this->name]['count'] = $item_count;
-                        $items['Items'][] = $data;
-                }
-                $items['Sums']['sum_without_vat'] = array_sum($prices_without_vat);
-                $items['Sums']['sum_with_vat'] = array_sum($prices_with_vat);
+                if (is_array($items_from_session)) {
+                        foreach ($items_from_session as $item_id => $item_count) {
+                                $data = $this->findById($item_id);
+                                $data[$this->name]['sum_without_vat'] = $prices_without_vat[] = $data[$this->name]['price_without_vat'] * $item_count;
+                                $data[$this->name]['sum_with_vat'] = $prices_with_vat[] = $data[$this->name]['price_with_vat'] * $item_count;
+                                $data[$this->name]['count'] = $item_count;
+                                $items['Items'][] = $data;
+                        }
+                        $items['Sums']['sum_without_vat'] = array_sum($prices_without_vat);
+                        $items['Sums']['sum_with_vat'] = array_sum($prices_with_vat);
 
-                return $items;
+                        return $items;
+                }
+
+                return false;
 
         }
 

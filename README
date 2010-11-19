@@ -14,7 +14,6 @@ How to install
 - Go to Extensions > Plugins page
 - Upload the zip file (available here)
 - Click on tick/cross icon of 'Eshop' for activating or deactivating the plugin
-- In Croogo App controller add to helpers array: 'Number'
 
 All tables are created automatically by config/schema files
 
@@ -46,7 +45,7 @@ so you can use it in your controllers or views in array 'EshopItems' in
 node data.
 For showing item directly add 
 <?php echo $this->element('eshop_items_form', array('items' => $node['EshopItems'], 'plugin' => 'eshop')) ?>
-to your view file e.g. /app/views/themed/mytheme/nodes/view_product.ctp
+to your node view file e.g. /app/views/themed/mytheme/nodes/view_product.ctp
 
 
 

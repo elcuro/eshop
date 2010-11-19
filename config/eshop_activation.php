@@ -116,6 +116,7 @@ class EshopActivation {
                 $controller->Croogo->addAco('EshopBasket/view', array('registered', 'public'));
                 $controller->Croogo->addAco('EshopBasket/delete', array('registered', 'public'));
                 $controller->Croogo->addAco('EshopBasket/recalc', array('registered', 'public'));
+                $controller->Croogo->addAco('EshopBasket/basketSummary', array('registered', 'public'));
                 $controller->Croogo->addAco('EshopOrders');
                 $controller->Croogo->addAco('EshopOrders/add', array('registered', 'public'));
 
