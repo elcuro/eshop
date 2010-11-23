@@ -39,12 +39,64 @@ class EshopOrdersController extends EshopAppController {
                 $shippings = array_combine($shippings, $shippings);
                 $payements = explode(',', $cfg['payement']);
                 $payements = array_combine($payements, $payements);
-                $this->set(compact('shippings', 'payements'));
+                $statuses = explode(',', $cfg['statuses']);
+                $statuses = array_combine($statuses, $statuses);
+                $this->set(compact('shippings', 'payements', 'statuses'));
 
                 $this->Security->validatePost = false;
 
                  parent::beforeFilter();
 
+        }
+
+        /**
+         * Admin index
+         * listing of all orders
+         *
+         * @return void
+         */
+        public function admin_index() {
+
+                $this->set('title_for_layout', __('Orders evidence', true));
+
+                $orders = $this->EshopOrder->find('all', array(
+                    'order' => 'EshopOrder.created DESC'
+                ));
+                foreach ($orders as $key => $order) {
+                                $aItems = unserialize($order['EshopOrder']['items']);
+                                $order['CalculatedItems'] = $this->EshopItem->findCalculatedBasketItems($aItems);
+                                $orders[$key] = $order;
+                }
+
+                $this->set(compact('orders'));
+
+        }
+
+        /**
+         * Edit orders
+         *
+         * @param integer $id Order id
+         * @return void
+         */
+        public function admin_edit($id = null) {
+
+                if (is_null($id)) {
+                        $this->Session->setFlash(__('Missing Order ID', true), 'default', array('class' => 'error'));
+                        $this->redirect(array('action' => 'index'));
+                }
+
+                if (!empty($this->data)) {
+                        $this->EshopOrder->create();
+                        if ($this->EshopOrder->save($this->data)) {
+                                $this->Session->setFlash(__('The Order has been updated', true), 'default', array('class' => 'success'));
+                                $this->redirect(array('action' => 'index'));
+                        } else {
+                                $this->Session->setFlash(__('Error during order updating, contact admin', true), 'default', array('class' => 'error'));
+                        }
+                }
+
+                $this->data = $this->EshopOrder->read(null, $id);
+                $this->set('items', $this->EshopItem->findCalculatedBasketItems(unserialize($this->data['EshopOrder']['items'])));
         }
 
         /**
@@ -65,6 +117,8 @@ class EshopOrdersController extends EshopAppController {
                 if (!empty($this->data)) {
                         $this->EshopOrder->create();
                         $this->data['EshopOrder']['items'] = serialize($this->Session->read('Eshop.items'));
+                        $statuses = Configure::read('Eshop.statuses');
+                        $this->data['EshopOrder']['status'] = array_shift(explode(',', $statuses));
                         if ($this->EshopOrder->save($this->data)) {
 
                                 $this->Email->from = Configure::read('Site.title') . ' '

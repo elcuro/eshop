@@ -21,7 +21,7 @@
         echo $form->input('payement', array('label' => __('Payement', true)));
         echo $form->input('shipping', array('label' => __('Shipping', true)));
 
-        echo $form->input('note', array('label' => __('Note', true)));
+        echo $form->input('order_note', array('label' => __('Note', true)));
 
 
         echo $form->end(__('Order!', true));

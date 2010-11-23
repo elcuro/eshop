@@ -18,18 +18,22 @@ How to install
 All tables are created automatically by config/schema files
 
 
-Settings -> Configure
+Settings -> Orders
 ------------------------------
-Statuses - comma separated possible statuses of order
-Payement - comma separated payement methods in order for
-Shipping - comma separated shipping methods in order form
-Email - all orders will be sended to this email also
-
+All recieved orders, here you can see detail of order,
+change status of order, etc.
 
 Settings -> Suppliers
 ------------------------------
 List of all eshop suppliers.
 Min. one supplier required
+
+Settings -> Configure
+------------------------------
+Statuses - comma separated possible statuses of order
+Payement - comma separated payement methods in order form
+Shipping - comma separated shipping methods in order form
+Email - all orders will be sended to this email also
 
 
 How to use
