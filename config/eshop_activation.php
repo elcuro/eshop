@@ -66,27 +66,6 @@ class EshopActivation {
 
                 }
 
-                // check if exist node type product, if not create 'product' type
-                $Type = ClassRegistry::init('Type');
-                if (!$Type->findByAlias('product')) {
-                        $Type->create();
-                        $data['Type'] = array(
-                            'title' => 'Eshop product',
-                            'alias' => 'product',
-                            'description' => 'Type for products of Eshop plugin',
-                            'format_show_author' => 0,
-                            'format_show_date' => 0,
-                            'comment_status' => 0,
-                            'comment_approve' => 0,
-                            'comment_spam_protection' => 0,
-                            'comment_captcha' => 0,
-                            'plugin' => 'eshop'
-                        );
-                        if(!$Type->save($data)) {
-                                return false;
-                        }
-                }
-
                 return true;
 
         }
@@ -118,6 +97,7 @@ class EshopActivation {
                 $controller->Croogo->addAco('EshopBasket/recalc', array('registered', 'public'));
                 $controller->Croogo->addAco('EshopBasket/basketSummary', array('registered', 'public'));
                 $controller->Croogo->addAco('EshopOrders');
+                $controller->Croogo->addAco('EshopOrders/admin_index');
                 $controller->Croogo->addAco('EshopOrders/add', array('registered', 'public'));
 
                 // set default config
@@ -138,6 +118,37 @@ class EshopActivation {
                 $controller->Setting->write('Eshop.email', Configure::read('Site.email'), array(
                     'editable' => 1, 'description' => __('All orders will be sended to orderer email and to this email also', true))
                 );
+
+                // create basket summary block
+                if (!$controller->Block->save(array(
+                        'region_id' => 4,
+                        'title' => 'Eshop basket summary',
+                        'alias' => 'eshopbasketsummary',
+                        'body' => '[element:basket_summary plugin="Eshop"]',
+                        'show_title' => 1,
+                        'status' => 1
+                        ))) return false;
+
+                // create product type if not exists
+                $Type = ClassRegistry::init('Type');
+                if (!$Type->findByAlias('product')) {
+                        $Type->create();
+                        $data['Type'] = array(
+                            'title' => 'Eshop product',
+                            'alias' => 'product',
+                            'description' => 'Type for products of Eshop plugin',
+                            'format_show_author' => 0,
+                            'format_show_date' => 0,
+                            'comment_status' => 0,
+                            'comment_approve' => 0,
+                            'comment_spam_protection' => 0,
+                            'comment_captcha' => 0,
+                            'plugin' => 'eshop'
+                        );
+                        if(!$Type->save($data)) {
+                                return false;
+                        }
+                }
 
         }
 
@@ -173,10 +184,15 @@ class EshopActivation {
          * @return void
          */
         public function onDeactivation(&$controller) {
+
+                // remove accos
                 $controller->Croogo->removeAco('EshopItems');
                 $controller->Croogo->removeAco('EshopSuppliers');
                 $controller->Croogo->removeAco('EshopBasket');
                 $controller->Croogo->removeAco('EshopOrders');
+
+                // remove eshop basket summary block
+                $controller->Block->deleteAll(array('Block.alias' => "eshopbasketsummary"));
         }
 
         /**
