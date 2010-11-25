@@ -42,7 +42,7 @@
         <tr>
                 <td colspan="3">&nbsp;</td>
                 <td><strong><?php __('Total'); ?>:</strong></td>
-                <td><strong><?php echo $number->currency($items['Sums']['sum_with_vat']); ?></strong></td>
+                <td><strong><?php echo $number->currency($items['Sums']['sum_with_vat'], 'EUR'); ?></strong></td>
         </tr>
 </table>
 <br/>
