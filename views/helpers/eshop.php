@@ -26,7 +26,7 @@ class EshopHelper extends AppHelper {
         public function afterSetNode() {
                 if ($this->Layout->node['Node']['type'] == 'product') {
                         $this->Layout->setNodeField('body',
-                                $this->Layout->node('title') . $this->Layout->View->element('eshop_items_form', array('items' => $this->Layout->node['EshopItems'], 'plugin' => 'eshop')));
+                                $this->Layout->node('body') . $this->Layout->View->element('eshop_items_form', array('items' => $this->Layout->node['EshopItems'], 'plugin' => 'eshop')));
                 }
         }
 }?>
