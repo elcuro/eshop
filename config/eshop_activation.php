@@ -105,6 +105,7 @@ class EshopActivation {
                         Delivered,Rejected';
                 $payement = 'Cash on delivery,Proforma invoice,Personally';
                 $shipping = 'Cash on delivery,Curier,Personally';
+                $vat = 20;
 
                 $controller->Setting->write('Eshop.statuses', $statuses, array(
                     'editable' => 1, 'description' => __('Types of order statuses', true))
@@ -117,6 +118,9 @@ class EshopActivation {
                 );
                 $controller->Setting->write('Eshop.email', Configure::read('Site.email'), array(
                     'editable' => 1, 'description' => __('All orders will be sended to orderer email and to this email also', true))
+                );
+                $controller->Setting->write('Eshop.vat', $vat, array(
+                    'editable' => 1, 'description' => __('Default VAT',true))
                 );
 
                 // create basket summary block
