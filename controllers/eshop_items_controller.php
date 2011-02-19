@@ -24,6 +24,18 @@ class EshopItemsController extends EshopAppController {
             'Node',
             'Eshop.EshopItem'
         );
+
+        /**
+         * Before filter callback,
+         * disable CSFR security check to avoid security error
+         *
+         * @return void
+         */
+        function beforeFilter() {
+                parent::beforeFilter();
+                $this->Security->validatePost = false;
+        }
+
         
         /**
          * Admin Index controller
