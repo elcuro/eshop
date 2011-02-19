@@ -98,7 +98,7 @@ class EshopBehavior extends ModelBehavior {
                         $this->Item = ClassRegistry::init('Eshop.EshopItem');
                 }
 
-                $this->Item->deleteAll(array('node_id' => $node_id));
+                $this->Item->deleteAll(array('node_id' => $model->id));
         }
 
 }
