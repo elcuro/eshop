@@ -5,7 +5,7 @@
             'inputDefaults' => array('label' => false, 'div' => false)
         ));?>
 
-        <table>
+        <table width="100%">
                 <?php
                 $i = 1;
                 foreach ($items as $item) {?>
@@ -24,8 +24,8 @@
                                 ?>
                         </td>
                         <td>
-                                <strong class="eshop-item-price"><?php echo $number->currency($item['EshopItem']['price_without_vat'] * (1+($item['EshopItem']['vat']/100)), 'EUR');?></strong> s DPH<br />
-                                <em class="eshop-price-vithout-vat"><?php echo $number->currency($item['EshopItem']['price_without_vat'], 'EUR');?> bez DPH</em>
+                                <strong class="eshop-item-price"><?php echo $number->currency($item['EshopItem']['price_without_vat'] * (1+($item['EshopItem']['vat']/100)), __d( 'eshop', 'EUR', true ));?></strong>
+                                <em class="eshop-price-vithout-vat"><?php echo $number->currency($item['EshopItem']['price_without_vat'], __d( 'eshop', 'EUR', true ));?> <?php __d( 'eshop', 'bez DPH' ); ?></em>
                         </td>
                 </tr>
                 <?php
@@ -33,5 +33,5 @@
                 } ?>
         </table>
 
-        <?php echo $form->end(__('Add to basket', true));?>
+        <?php echo $form->end(__d( 'eshop', 'Add to basket', true));?>
 </div>

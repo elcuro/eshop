@@ -12,7 +12,7 @@
         <div class="actions">
                 <ul>
                         <li>
-                                <?php echo $html->link(__('Edit items', true), array(
+                                <?php echo $html->link(__d( 'eshop', 'Edit items', true), array(
                                     'plugin' => 'eshop',
                                     'controller' => 'eshop_items',
                                     'action'=>'index',
@@ -25,11 +25,11 @@
         <?php
         $tableHeaders =  $html->tableHeaders(array(
             'id',
-            __('Title', true),
-            __('Price (without VAT)', true),
-            __('Delivery (in days)', true),
-            __('Discount (%)', true),
-            __('Supplier', true),
+            __d( 'eshop', 'Title', true),
+            __d( 'eshop', 'Price (without VAT)', true),
+            __d( 'eshop', 'Delivery (in days)', true),
+            __d( 'eshop', 'Discount (%)', true),
+            __d( 'eshop', 'Supplier', true),
         ));
         echo $tableHeaders;
 

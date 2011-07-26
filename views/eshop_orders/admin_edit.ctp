@@ -1,33 +1,11 @@
-<style rel="stylesheet">
-/* this styles are only for demonstration, will be removed in next updates !!! */
-.orders dl
-{
-        width: 600px;
-        margin-bottom: 15px;
-}
-.orders dt
-{
-        width: 250px;
-        float: left;
-        font-weight: bold;
-}
-.orders dd
-{
-        margin-left: 200px;
-        width: 350px;
-}
-h3
-{
-        clear: left;
-}
-</style>
+
 
 <div class="orders form">
-        <h2><?php __('Edit order'); ?></h2>
+        <h2><?php __d( 'eshop', 'Edit order'); ?></h2>
 
         <div class="actions">
                 <ul>
-                        <li><?php echo $html->link(__('Show all orders', true), array('action'=>'index')); ?></li>
+                        <li><?php echo $html->link(__d( 'eshop', 'Show all orders', true), array('action'=>'index')); ?></li>
                 </ul>
         </div>
 
@@ -36,70 +14,70 @@ h3
                 <?php
                 echo $form->input('id');
                 ?>
-                <?php echo $form->input('status', array('label' => 'Change status of this order')); ?>
-                <h3><?php __('Client'); ?></h3>
+                <?php echo $form->input('status', array('label' => __d( 'eshop', 'Change status of this order', true ))); ?>
+                <h3><?php __d( 'eshop', 'Client'); ?></h3>
                 <dl>
-                        <dt><?php __('Name'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Name'); ?>:</dt>
                         <dd><?php echo $this->data['EshopOrder']['name']; ?></dd>
-                        <dt><?php __('Street'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Street'); ?>:</dt>
                         <dd><?php echo $this->data['EshopOrder']['adress_street']; ?></dd>
-                        <dt><?php __('City'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'City'); ?>:</dt>
                         <dd><?php echo $this->data['EshopOrder']['adress_city']; ?></dd>
-                        <dt><?php __('ZIP'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['adress_zip']) ? $this->data['EshopOrder']['adress_zip'] : __('N/A', true); ?></dd>
-                        <dt><?php __('Country'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['adress_country']) ? $this->data['EshopOrder']['adress_country'] : __('N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'ZIP'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['adress_zip']) ? $this->data['EshopOrder']['adress_zip'] : __d( 'eshop', 'N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'Country'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['adress_country']) ? $this->data['EshopOrder']['adress_country'] : __d( 'eshop', 'N/A', true); ?></dd>
                 </dl>
-                <h3><?php __('Company data'); ?></h3>
+                <h3><?php __d( 'eshop', 'Company data'); ?></h3>
                 <dl>
-                        <dt><?php __('Company id. number'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['companyid']) ? $this->data['EshopOrder']['companyid'] : __('N/A', true); ?></dd>
-                        <dt><?php __('Company id. number for Vat'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['companyid_vat']) ? $this->data['EshopOrder']['companyid_vat'] : __('N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'Company id. number'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['companyid']) ? $this->data['EshopOrder']['companyid'] : __d( 'eshop', 'N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'Company id. number for Vat'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['companyid_vat']) ? $this->data['EshopOrder']['companyid_vat'] : __d( 'eshop', 'N/A', true); ?></dd>
                 </dl>
-                <h3><?php __('Contact data'); ?></h3>
+                <h3><?php __d( 'eshop', 'Contact data'); ?></h3>
                 <dl>
-                        <dt><?php __('Email'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Email'); ?>:</dt>
                         <dd><?php echo $this->data['EshopOrder']['contact_email']; ?></dd>
-                        <dt><?php __('Phone'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['contact_phone']) ? $this->data['EshopOrder']['contact_phone'] : __('N/A', true); ?></dd>
-                        <dt><?php __('Fax'); ?>:</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['contact_fax']) ? $this->data['EshopOrder']['contact_fax'] : __('N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'Phone'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['contact_phone']) ? $this->data['EshopOrder']['contact_phone'] : __d( 'eshop', 'N/A', true); ?></dd>
+                        <dt><?php __d( 'eshop', 'Fax'); ?>:</dt>
+                        <dd><?php echo!empty($this->data['EshopOrder']['contact_fax']) ? $this->data['EshopOrder']['contact_fax'] : __d( 'eshop', 'N/A', true); ?></dd>
                 </dl>
-                <h3><?php __('Delivery adress'); ?></h3>
+                <h3><?php __d( 'eshop', 'Delivery adress'); ?></h3>
                 <dl>
-                        <dt><?php __('Name'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Name'); ?>:</dt>
                         <dd><?php echo!empty($this->data['EshopOrder']['delivery_name']) ? $this->data['EshopOrder']['delivery_name'] : $this->data['EshopOrder']['name']; ?></dd>
-                        <dt><?php __('Street'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Street'); ?>:</dt>
                         <dd><?php echo!empty($this->data['EshopOrder']['delivery_adress_street']) ? $this->data['EshopOrder']['delivery_adress_street'] : $this->data['EshopOrder']['adress_street']; ?></dd>
-                        <dt><?php __('City'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'City'); ?>:</dt>
                         <dd><?php echo!empty($this->data['EshopOrder']['delivery_adress_city']) ? $this->data['EshopOrder']['delivery_adress_city'] : $this->data['EshopOrder']['adress_city']; ?></dd>
-                        <dt><?php __('ZIP'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'ZIP'); ?>:</dt>
                         <dd><?php echo!empty($this->data['EshopOrder']['delivery_adress_zip']) ? $this->data['EshopOrder']['delivery_adress_zip'] : $this->data['EshopOrder']['adress_zip']; ?>&nbsp;</dd>
-                        <dt><?php __('Country'); ?>:</dt>
+                        <dt><?php __d( 'eshop', 'Country'); ?>:</dt>
                         <dd><?php echo!empty($this->data['EshopOrder']['delivery_adress_country']) ? $this->data['EshopOrder']['delivery_adress_country'] : $this->data['EshopOrder']['adress_country']; ?></dd>
                 </dl>
-                <h3><?php __('Shipping and payement'); ?></h3>
+                <h3><?php __d( 'eshop', 'Shipping and payement'); ?></h3>
                 <dl>
-                        <dt><?php __('Shipping'); ?>:</dt>
-                        <dd><?php __($this->data['EshopOrder']['shipping']); ?></dd>
-                        <dt><?php __('Payement'); ?>:</dt>
-                        <dd><?php __($this->data['EshopOrder']['payement']); ?></dd>
+                        <dt><?php __d( 'eshop', 'Shipping'); ?>:</dt>
+                        <dd><?php __d( 'eshop', $this->data['EshopOrder']['shipping']); ?></dd>
+                        <dt><?php __d( 'eshop', 'Payement'); ?>:</dt>
+                        <dd><?php __d( 'eshop', $this->data['EshopOrder']['payement']); ?></dd>
                 </dl>
-                <h3><?php __('Note'); ?></h3>
+                <h3><?php __d( 'eshop', 'Note'); ?></h3>
                 <dl>
                         <dt>&nbsp;</dt>
-                        <dd><?php echo!empty($this->data['EshopOrder']['order_note']) ? $this->data['EshopOrder']['order_note'] : __('Without note', true); ?></dd>
+                        <dd><?php echo!empty($this->data['EshopOrder']['order_note']) ? $this->data['EshopOrder']['order_note'] : __d( 'eshop', 'Without note', true); ?></dd>
                 </dl>
-                <h3><?php __('Items'); ?></h3>
+                <h3><?php __d( 'eshop', 'Items'); ?></h3>
                 <table cellpadding="0" cellspacing="0">
                         <?php
                         $tableHeaders = $html->tableHeaders(array(
                                     'id',
-                                    __('Title', true),
-                                    __('Qt.', true),
-                                    __('Sum without Vat', true),
-                                    __('Sum with Vat', true),
+                                    __d( 'eshop', 'Title', true),
+                                    __d( 'eshop', 'Qt.', true),
+                                    __d( 'eshop', 'Sum without Vat', true),
+                                    __d( 'eshop', 'Sum with Vat', true),
                                 ));
 
                         echo $tableHeaders;
@@ -110,8 +88,8 @@ h3
                                     $item['EshopItem']['id'],
                                     $item['EshopItem']['title'],
                                     $item['EshopItem']['count'],
-                                    $number->currency($item['EshopItem']['sum_without_vat'], 'EUR'),
-                                    '<strong>' . $number->currency($item['EshopItem']['sum_with_vat'], 'EUR') . '</strong>'
+                                    $number->currency($item['EshopItem']['sum_without_vat'], __d( 'eshop', 'EUR', true )),
+                                    '<strong>' . $number->currency($item['EshopItem']['sum_with_vat'], __d( 'eshop', 'EUR', true )) . '</strong>'
                                 );
                         }
 
@@ -119,12 +97,12 @@ h3
                         ?>
                 </table>
                 <dl>
-                        <dt><?php __('Total sum without Vat'); ?>:</dt>
-                        <dd><?php echo $number->currency($items['Sums']['sum_without_vat'], 'EUR'); ?></dd>
-                        <dt><?php __('Total sum with Vat'); ?>:</dt>
-                        <dd><strong><?php echo $number->currency($items['Sums']['sum_with_vat'], 'EUR'); ?></strong></dd>
+                        <dt><?php __d( 'eshop', 'Total sum without Vat'); ?>:</dt>
+                        <dd><?php echo $number->currency($items['Sums']['sum_without_vat'], __d( 'eshop', 'EUR', true )); ?></dd>
+                        <dt><?php __d( 'eshop', 'Total sum with Vat'); ?>:</dt>
+                        <dd><strong><?php echo $number->currency($items['Sums']['sum_with_vat'], __d( 'eshop', 'EUR', true )); ?></strong></dd>
                 </dl>
-                <?php echo $form->input('note', array('label' => 'Your notes for this order')); ?>                
+                <?php echo $form->input('note', array('label' => __d( 'eshop', 'Your notes for this order', true ))); ?>
         </fieldset>
-        <?php echo $form->end('Submit'); ?>
+        <?php echo $form->end( __d( 'eshop', 'Submit', true )); ?>
 </div>

@@ -14,6 +14,31 @@ class EshopSuppliersController extends EshopAppController {
          * @var string
          */
         public $name = 'EshopSuppliers';
+        
+        
+        
+        public function index( $name = null )
+        {
+        	$conditions = null;
+        	
+        	if( $name == null )
+        	{
+
+        		$suppliers = $this->EshopSupplier->find('all');
+        	}else{
+        		
+        		$suppliers = $this->EshopSupplier->findByName( $name );
+        		
+        		//$suppliers = $this->EshopSupplier->read( null, $name );
+        	}
+        	
+        	
+        	$this->set('title_for_layout', __d( 'eshop', 'Suppliers', true));
+            
+            $this->set('suppliers', $suppliers);
+        }
+        
+        
 
         /**
          * Admin index
@@ -23,7 +48,7 @@ class EshopSuppliersController extends EshopAppController {
          */
         public function admin_index() {
 
-                $this->set('title_for_layout', __('Suppliers', true));
+                $this->set('title_for_layout', __d( 'eshop', 'Suppliers', true));
                 $suppliers = $this->EshopSupplier->find('all');
                 $this->set('suppliers', $suppliers);
 
@@ -39,10 +64,10 @@ class EshopSuppliersController extends EshopAppController {
                 if (!empty($this->data)) {
                         $this->EshopSupplier->create();
                         if ($this->EshopSupplier->save($this->data)) {
-                                $this->Session->setFlash(__('The Supplier has been saved', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'The Supplier has been saved', true), 'default', array('class' => 'success'));
                                 $this->redirect(array('action' => 'index'));
                         } else {
-                                $this->Session->setFlash(__('Error during supplier saving, contact admin', true), 'default', array('class' => 'error'));
+                                $this->Session->setFlash(__d( 'eshop', 'Error during supplier saving, contact admin', true), 'default', array('class' => 'error'));
                         }
                 }
 
@@ -57,17 +82,17 @@ class EshopSuppliersController extends EshopAppController {
         public function admin_edit($id = false) {
 
                 if (!$id) {
-                        $this->Session->setFlash(__('Missing Supplier ID', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Missing Supplier ID', true), 'default', array('class' => 'error'));
                         $this->redirect(array('action' => 'index'));
                 }
 
                 if (!empty($this->data)) {
                         $this->EshopSupplier->create();
                         if ($this->EshopSupplier->save($this->data)) {
-                                $this->Session->setFlash(__('The Supplier has been updated', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'The Supplier has been updated', true), 'default', array('class' => 'success'));
                                 $this->redirect(array('action' => 'index'));
                         } else {
-                                $this->Session->setFlash(__('Error during supplier updating, contact admin', true), 'default', array('class' => 'error'));
+                                $this->Session->setFlash(__d( 'eshop', 'Error during supplier updating, contact admin', true), 'default', array('class' => 'error'));
                         }
                 }
 
@@ -84,13 +109,13 @@ class EshopSuppliersController extends EshopAppController {
         public function admin_delete($id = false) {
 
                 if (!$id) {
-                        $this->Session->setFlash(__('Missing supplier ID', true));
+                        $this->Session->setFlash(__d( 'eshop', 'Missing supplier ID', true));
                 }
 
                 if ($this->EshopSupplier->delete($id, true)) {
-                        $this->Session->setFlash(__('Supplier successfully deleted', true));
+                        $this->Session->setFlash(__d( 'eshop', 'Supplier successfully deleted', true));
                 } else {
-                        $this->Session->setFlash(__('Error during delete supplier, contact admin', true));
+                        $this->Session->setFlash(__d( 'eshop', 'Error during delete supplier, contact admin', true));
                 }
                 $this->redirect(array('action' => 'index'));
 

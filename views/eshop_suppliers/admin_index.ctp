@@ -3,7 +3,7 @@
 
         <div class="actions">
                 <ul>
-                        <li><?php echo $html->link(__('New supplier', true), array('action'=>'add')); ?></li>
+                        <li><?php echo $html->link(__d( 'eshop', 'New supplier', true), array('action'=>'add')); ?></li>
                 </ul>
         </div>
 
@@ -11,17 +11,17 @@
         <?php
         $tableHeaders =  $html->tableHeaders(array(
             'id',
-            __('Name', true),
-            __('Actions', true),
+            __d( 'eshop', 'Name', true),
+            __d( 'eshop', 'Actions', true),
         ));
         echo $tableHeaders;
 
         $rows = array();
         foreach ($suppliers as $supplier) {
-                $actions = $html->link(__('Edit', true), array(
+                $actions = $html->link(__d( 'eshop', 'Edit', true), array(
                     'controller' => 'eshop_suppliers', 'action' => 'edit', $supplier['EshopSupplier']['id']));
-                $actions .= ' ' . $html->link(__('Delete', true), array(
-                    'controller' => 'eshop_suppliers', 'action' => 'delete', $supplier['EshopSupplier']['id']), null, __('Are you really sure? Will be deleted all items from this supplier!', true));
+                $actions .= ' ' . $html->link(__d( 'eshop', 'Delete', true), array(
+                    'controller' => 'eshop_suppliers', 'action' => 'delete', $supplier['EshopSupplier']['id']), null, __d( 'eshop', 'Are you really sure? Will be deleted all items from this supplier!', true));
 
                 $rows[] = array(
                     $supplier['EshopSupplier']['id'],
