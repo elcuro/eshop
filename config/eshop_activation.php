@@ -101,32 +101,31 @@ class EshopActivation {
                 $controller->Croogo->addAco('EshopOrders/add', array('registered', 'public'));
 
                 // set default config
-                $statuses = 'Waiting for acceptacion,Accepted,Canceled,Sended,
-                        Delivered,Rejected';
-                $payement = 'Cash on delivery,Proforma invoice,Personally';
-                $shipping = 'Cash on delivery,Curier,Personally';
+                $statuses = __d( 'eshop', 'Waiting for acceptacion,Accepted,Canceled,Sended,Delivered,Rejected', true);
+                $payement = __d( 'eshop', 'Cash on delivery,Proforma invoice,Personally', true);
+                $shipping = __d( 'eshop', 'Cash on delivery,Curier,Personally', true);
                 $vat = 20;
 
                 $controller->Setting->write('Eshop.statuses', $statuses, array(
-                    'editable' => 1, 'description' => __('Types of order statuses', true))
+                    'editable' => 1, 'description' => __d( 'eshop', 'Types of order statuses', true), 'title' => __d( 'eshop', 'Statuses', true))
                 );
                 $controller->Setting->write('Eshop.payement', $payement, array(
-                    'editable' => 1, 'description' => __('Types of payement method', true))
+                    'editable' => 1, 'description' => __d( 'eshop', 'Types of payement method', true), 'title' => __d( 'eshop', 'Payement methods', true))
                 );
                 $controller->Setting->write('Eshop.shipping', $shipping, array(
-                    'editable' => 1, 'description' => __('Shiping methods', true))
+                    'editable' => 1, 'description' => __d( 'eshop', 'Shiping methods', true), 'title' => __d( 'eshop', 'Shiping methods', true))
                 );
                 $controller->Setting->write('Eshop.email', Configure::read('Site.email'), array(
-                    'editable' => 1, 'description' => __('All orders will be sended to orderer email and to this email also', true))
+                    'editable' => 1, 'description' => __d( 'eshop', 'All orders will be sended to orderer email and to this email also', true), 'title' => __d( 'eshop', 'Email orders', true))
                 );
                 $controller->Setting->write('Eshop.vat', $vat, array(
-                    'editable' => 1, 'description' => __('Default VAT',true))
+                    'editable' => 1, 'description' => __d( 'eshop', 'Default VAT',true), 'title' => __d( 'eshop', 'VAT',true))
                 );
 
                 // create basket summary block
                 if (!$controller->Block->save(array(
                         'region_id' => 4,
-                        'title' => 'Eshop basket summary',
+                        'title' => __d( 'eshop', 'Eshop basket summary', true),
                         'alias' => 'eshopbasketsummary',
                         'body' => '[element:basket_summary plugin="Eshop"]',
                         'show_title' => 1,
@@ -138,9 +137,9 @@ class EshopActivation {
                 if (!$Type->findByAlias('product')) {
                         $Type->create();
                         $data['Type'] = array(
-                            'title' => 'Eshop product',
+                            'title' => __d( 'eshop', 'Eshop product', true),
                             'alias' => 'product',
-                            'description' => 'Type for products of Eshop plugin',
+                            'description' => __( 'eshop', 'Type for products of Eshop plugin', true ),
                             'format_show_author' => 0,
                             'format_show_date' => 0,
                             'comment_status' => 0,
