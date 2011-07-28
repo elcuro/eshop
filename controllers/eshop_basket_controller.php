@@ -70,7 +70,7 @@ class EshopBasketController extends EshopAppController {
 
                 
                 
-                // evita o erro com carrinho vazio
+                // prevent the error with empty cart
                 if( isset( $session_items ) && !empty( $session_items ) )
                 {
                 
