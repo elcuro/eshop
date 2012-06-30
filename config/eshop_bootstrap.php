@@ -1,4 +1,8 @@
 <?php
+	// Routes of plugin
+	Croogo::hookRoutes("Eshop");
+	
+	
         Croogo::hookBehavior('Node', 'Eshop.Eshop');
         Croogo::hookHelper('*', 'Number');
         Croogo::hookHelper('Nodes', 'Eshop.Eshop');

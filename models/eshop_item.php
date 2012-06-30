@@ -22,7 +22,7 @@ class EshopItem extends EshopAppModel {
          */
         public $belongsTo = array(
             'EshopSupplier' => array(
-                'className' => 'Eshop.EshopSupplier'
+                'className' => 'Eshop.EshopSupplier',
             )
         );
 

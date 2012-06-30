@@ -1,0 +1,684 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-07-27 23:27-0300\n"
+"PO-Revision-Date: 2011-07-27 22:34-0400\n"
+"Last-Translator: John-Henrique <john@midianegocios.com.br>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: \config\eshop_activation.php:104;104;104
+msgid "Waiting for acceptacion,Accepted,Canceled,Sended,Delivered,Rejected"
+msgstr "Aguardando aprovação,Aprovado,Cancelado,Enviado,Entregue,Devolvido"
+
+#: \config\eshop_activation.php:105;105;105
+msgid "Cash on delivery,Proforma invoice,Personally"
+msgstr "Pagar na entrega,Boleto bancário,Pessoalmente"
+
+#: \config\eshop_activation.php:106;106;106
+msgid "Cash on delivery,Curier,Personally"
+msgstr "Sedex a cobrar,PAC,Retirar pessoalmente"
+
+#: \config\eshop_activation.php:110;110;110
+msgid "Types of order statuses"
+msgstr "Tipo de status da compra"
+
+#: \config\eshop_activation.php:110;110;110
+#, fuzzy
+msgid "Statuses"
+msgstr "Status"
+
+#: \config\eshop_activation.php:113;113;113
+msgid "Types of payement method"
+msgstr "Tipo de pagamento"
+
+#: \config\eshop_activation.php:113;113;113
+msgid "Payement methods"
+msgstr "Métodos de pagamento"
+
+#: \config\eshop_activation.php:116;116;116;116;116;116
+msgid "Shiping methods"
+msgstr "Método de entrega"
+
+#: \config\eshop_activation.php:119;119;119
+msgid "All orders will be sended to orderer email and to this email also"
+msgstr "Todos os pedidos serão enviados para este email"
+
+#: \config\eshop_activation.php:119;119;119
+msgid "Email orders"
+msgstr "Pedidos via email"
+
+#: \config\eshop_activation.php:122;122;122
+msgid "Default VAT"
+msgstr "Taxa padrão (porcentagem de todas as taxas juntas)"
+
+#: \config\eshop_activation.php:122;122;122
+msgid "VAT"
+msgstr "Taxas + impostos"
+
+#: \config\eshop_activation.php:128;128;128
+msgid "Eshop basket summary"
+msgstr "Carrinho"
+
+#: \config\eshop_activation.php:140;140;140
+msgid "Eshop product"
+msgstr "Produto"
+
+#: \config\eshop_routes.php:7;7;7
+msgid "/shop/cart"
+msgstr "/loja/carrinho"
+
+#: \config\eshop_routes.php:14;14;14
+msgid "/shop/checkout"
+msgstr "/loja/finalizar"
+
+#: \config\eshop_routes.php:22;22;22
+#, fuzzy
+msgid "/products"
+msgstr "Produto"
+
+#: \config\eshop_routes.php:29;29;29
+msgid "/product/:slug"
+msgstr "/produto/:slug"
+
+#: \controllers\eshop_basket_controller.php:33;33;33
+msgid "Eshop Item has been added"
+msgstr "Produto adicionado ao carrinho"
+
+#: \controllers\eshop_basket_controller.php:47;47;47
+msgid "Wrong item_id for delete"
+msgstr "Item inválido, não será possível remove-lo"
+
+#: \controllers\eshop_basket_controller.php:52;52;52
+msgid "Item was removed from basket"
+msgstr "Item removido do carrinho"
+
+#: \controllers\eshop_items_controller.php:50;50;50
+msgid "Missing node id"
+msgstr "Id desconhecido"
+
+#: \controllers\eshop_items_controller.php:57;57;57
+msgid "Eshop items"
+msgstr "Itens no carrinho"
+
+#: \controllers\eshop_items_controller.php:83;83;83
+msgid "Add supplier - Missing node id"
+msgstr "Adicionar fornecedor - ID desconhecido"
+
+#: \controllers\eshop_items_controller.php:90;90;90
+msgid "Eshop Item has been saved"
+msgstr "Item adicionado"
+
+#: \controllers\eshop_items_controller.php:93;93;93
+msgid "Error during saving item"
+msgstr "Erro ao tentar salvar o item"
+
+#: \controllers\eshop_items_controller.php:113;143;113;143;113;143
+msgid "Missing Item ID"
+msgstr "O ID deste item é desconhecido"
+
+#: \controllers\eshop_items_controller.php:120;120;120
+msgid "Eshop Item has been updated"
+msgstr "Item atualizado"
+
+#: \controllers\eshop_items_controller.php:123;123;123
+msgid "Error during updating item"
+msgstr "Erro ao tentar atualizar item"
+
+#: \controllers\eshop_items_controller.php:148;148;148
+msgid "Item successfully deleted"
+msgstr "Item removido"
+
+#: \controllers\eshop_items_controller.php:151;151;151
+msgid "Error occured while deleting item"
+msgstr "Ocorreu um erro ao tentar remover o item"
+
+#: \controllers\eshop_orders_controller.php:60;60;60
+msgid "Orders evidence"
+msgstr "Relatorio de pedidos"
+
+#: \controllers\eshop_orders_controller.php:84;84;84
+msgid "Missing Order ID"
+msgstr "ID de pedido desconhecido"
+
+#: \controllers\eshop_orders_controller.php:91;91;91
+msgid "The Order has been updated"
+msgstr "Pedido atualizado"
+
+#: \controllers\eshop_orders_controller.php:94;94;94
+msgid "Error during order updating, contact admin"
+msgstr "Erro ao tentar atualizar pedido, entre em contato com o admin"
+
+#: \controllers\eshop_orders_controller.php:113;113;113
+msgid "No items for create order"
+msgstr "Nenhum item neste pedido"
+
+#: \controllers\eshop_orders_controller.php:128;128;128
+msgid "New order"
+msgstr "Novo pedido"
+
+#: \controllers\eshop_orders_controller.php:136;136;136
+msgid "Your order was succesfully sended. Check confirmation email in your mailbox"
+msgstr "Seu pedido foi enviado com sucesso. Verifique a confirmação no seu email"
+
+#: \controllers\eshop_orders_controller.php:139;139;139
+msgid "Error during order saving"
+msgstr "Erro ao tentar salvar pedido"
+
+#: \controllers\eshop_suppliers_controller.php:36;51;36;51;36;51
+#: \views\elements\admin_menu.ctp:4;4;4
+msgid "Suppliers"
+msgstr "Fornecedores"
+
+#: \controllers\eshop_suppliers_controller.php:67;67;67
+msgid "The Supplier has been saved"
+msgstr "Fornecedor salvo"
+
+#: \controllers\eshop_suppliers_controller.php:70;70;70
+msgid "Error during supplier saving, contact admin"
+msgstr "Erro ao tentar salvar fornecedor, entre em contato com o admin"
+
+#: \controllers\eshop_suppliers_controller.php:85;85;85
+msgid "Missing Supplier ID"
+msgstr "Fornecedor desconhecido"
+
+#: \controllers\eshop_suppliers_controller.php:92;92;92
+msgid "The Supplier has been updated"
+msgstr "Fornecedor atualizado"
+
+#: \controllers\eshop_suppliers_controller.php:95;95;95
+msgid "Error during supplier updating, contact admin"
+msgstr "Erro ao tentar atualizar fornecedor, entre em contato com o admin"
+
+#: \controllers\eshop_suppliers_controller.php:112;112;112
+msgid "Missing supplier ID"
+msgstr "ID de fornecedor desconhecido"
+
+#: \controllers\eshop_suppliers_controller.php:116;116;116
+msgid "Supplier successfully deleted"
+msgstr "Fornecedor removido"
+
+#: \controllers\eshop_suppliers_controller.php:118;118;118
+msgid "Error during delete supplier, contact admin"
+msgstr "Erro ao tentar remover fornecedor, entre em contato com o admin"
+
+#: \views\elements\admin_menu.ctp:1;1;1
+msgid "Eshop"
+msgstr "Loja virtual"
+
+#: \views\elements\admin_menu.ctp:3;3;3
+msgid "Orders"
+msgstr "Pedidos"
+
+#: \views\elements\admin_menu.ctp:5;5;5
+msgid "Configure"
+msgstr "Configuração"
+
+#: \views\elements\admin_tab_node.ctp:15;15;15
+msgid "Edit items"
+msgstr "Editar itens"
+
+#: \views\elements\admin_tab_node.ctp:28;28;28
+#: \views\eshop_items\admin_add.ctp:18;18;18
+#: \views\eshop_items\admin_edit.ctp:13;13;13
+#: \views\eshop_items\admin_index.ctp:23;23;23
+#: \views\eshop_orders\admin_edit.ctp:77;77;77
+msgid "Title"
+msgstr "Titulo"
+
+#: \views\elements\admin_tab_node.ctp:29;29;29
+#: \views\eshop_items\admin_index.ctp:24;24;24
+msgid "Price (without VAT)"
+msgstr "Preço (Sem taxas ou impostos)"
+
+#: \views\elements\admin_tab_node.ctp:30;30;30
+#: \views\eshop_items\admin_index.ctp:25;25;25
+msgid "Delivery (in days)"
+msgstr "Tempo de entrega (em dias)"
+
+#: \views\elements\admin_tab_node.ctp:31;31;31
+#: \views\eshop_items\admin_index.ctp:26;26;26
+msgid "Discount (%)"
+msgstr "Desconto (em %)"
+
+#: \views\elements\admin_tab_node.ctp:32;32;32
+#: \views\eshop_items\admin_add.ctp:17;17;17
+#: \views\eshop_items\admin_edit.ctp:11;11;11
+#: \views\eshop_items\admin_index.ctp:27;27;27
+msgid "Supplier"
+msgstr "Fornecedor"
+
+#: \views\elements\eshop_items_form.ctp:27;28;27;28;27;28
+#: \views\elements\email\html\confirm_order.ctp:38;39;45;38;39;45;38;39;45
+#: \views\elements\email\text\confirm_order.ctp:30;34;30;34;30;34
+#: \views\eshop_orders\admin_edit.ctp:91;92;101;103;91;92;101;103;91;92;101;103
+#: \views\eshop_orders\admin_index.ctp:32;32;32
+msgid "EUR"
+msgstr "R$ "
+
+#: \views\elements\eshop_items_form.ctp:28;28;28
+msgid "bez DPH"
+msgstr "com ICMS"
+
+#: \views\elements\eshop_items_form.ctp:36;36;36
+msgid "Add to basket"
+msgstr "Adicionar ao carrinho"
+
+#: \views\elements\email\html\confirm_order.ctp:1;1;1
+#: \views\elements\email\text\confirm_order.ctp:1;1;1
+msgid "Order no.%d confirmation email"
+msgstr "Email de confirmação do pedido Nº %d "
+
+#: \views\elements\email\html\confirm_order.ctp:4;4;4
+#: \views\elements\email\text\confirm_order.ctp:4;4;4
+#: \views\eshop_orders\admin_edit.ctp:18;18;18
+msgid "Client"
+msgstr "Cliente"
+
+#: \views\elements\email\html\confirm_order.ctp:5;5;5
+#: \views\elements\email\text\confirm_order.ctp:6;6;6
+msgid "Name: %s"
+msgstr "Nome: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:6;6;6
+#: \views\elements\email\text\confirm_order.ctp:7;7;7
+msgid "Street: %s"
+msgstr "Rua: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:7;7;7
+#: \views\elements\email\text\confirm_order.ctp:8;8;8
+msgid "City: %s"
+msgstr "Cidade: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:8;8;8
+#: \views\elements\email\text\confirm_order.ctp:9;9;9
+msgid "ZIP: %s"
+msgstr "CEP: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:9;9;9
+#: \views\elements\email\text\confirm_order.ctp:10;10;10
+msgid "Country: %s"
+msgstr "País: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:11;11;11
+#: \views\elements\email\text\confirm_order.ctp:12;12;12
+msgid "Email: %s"
+msgstr "Email: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:12;12;12
+#: \views\elements\email\text\confirm_order.ctp:13;13;13
+msgid "Phone: %s"
+msgstr "Telefone: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:15;15;15
+#: \views\elements\email\text\confirm_order.ctp:16;16;16
+msgid "Invoice data"
+msgstr "Data do pedido"
+
+#: \views\elements\email\html\confirm_order.ctp:16;16;16
+#: \views\elements\email\text\confirm_order.ctp:18;18;18
+msgid "Company ID: %s"
+msgstr "Empresa: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:17;17;17
+#: \views\elements\email\text\confirm_order.ctp:19;19;19
+msgid "Company Vat ID: %s"
+msgstr "Empresa  VAT ID: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:20;20;20
+#: \views\elements\email\text\confirm_order.ctp:22;22;22
+#: \views\eshop_orders\admin_edit.ctp:60;60;60
+msgid "Shipping and payement"
+msgstr "Pagamento e entrega"
+
+#: \views\elements\email\html\confirm_order.ctp:21;21;21
+#: \views\elements\email\text\confirm_order.ctp:24;24;24
+msgid "Shipping: %s"
+msgstr "Entrega: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:22;22;22
+#: \views\elements\email\text\confirm_order.ctp:25;25;25
+msgid "Payement: %s"
+msgstr "Pagamento: %s"
+
+#: \views\elements\email\html\confirm_order.ctp:24;24;24
+#: \views\elements\email\text\confirm_order.ctp:27;27;27
+msgid "Items for order"
+msgstr "Itens da compra"
+
+#: \views\elements\email\html\confirm_order.ctp:27;27;27
+msgid "Order num,"
+msgstr "Pedido Nº, "
+
+#: \views\elements\email\html\confirm_order.ctp:28;28;28
+msgid "Item name"
+msgstr "Nome do item"
+
+#: \views\elements\email\html\confirm_order.ctp:29;29;29
+#: \views\eshop_basket\view.ctp:10;10;10
+#: \views\eshop_orders\admin_edit.ctp:78;78;78
+msgid "Qt."
+msgstr "Qtd."
+
+#: \views\elements\email\html\confirm_order.ctp:30;30;30
+#: \views\eshop_orders\admin_edit.ctp:79;79;79
+msgid "Sum without Vat"
+msgstr "Subtotal"
+
+#: \views\elements\email\html\confirm_order.ctp:31;31;31
+#: \views\eshop_orders\admin_edit.ctp:80;80;80
+msgid "Sum with Vat"
+msgstr "Total bruto"
+
+#: \views\elements\email\html\confirm_order.ctp:44;44;44
+#: \views\elements\email\text\confirm_order.ctp:34;34;34
+msgid "Total"
+msgstr "Total"
+
+#: \views\eshop_basket\basket_summary.ctp:4;4;4
+msgid "In Basket"
+msgstr "No carrinho"
+
+#: \views\eshop_basket\basket_summary.ctp:7;7;7
+#: \views\eshop_basket\view.ctp:57;57;57
+msgid "Basket is empty"
+msgstr "Carrinho vazio"
+
+#: \views\eshop_basket\view.ctp:3;3;3
+msgid "Basket"
+msgstr "Carrinho"
+
+#: \views\eshop_basket\view.ctp:9;9;9
+msgid "Item"
+msgstr "Item"
+
+#: \views\eshop_basket\view.ctp:11;11;11
+msgid "Sum with vat"
+msgstr "Subtotal"
+
+#: \views\eshop_basket\view.ctp:12;12;12
+msgid "Remove from basket"
+msgstr "Ação"
+
+#: \views\eshop_basket\view.ctp:35;35;35
+msgid "Remove item"
+msgstr "Remover item"
+
+#: \views\eshop_basket\view.ctp:50;59;50;59;50;59
+msgid "Back to eshop"
+msgstr "Voltar para a loja"
+
+#: \views\eshop_basket\view.ctp:53;53;53
+#: \views\eshop_orders\add.ctp:27;27;27
+msgid "Order!"
+msgstr "Finalizar pedido"
+
+#: \views\eshop_basket\view.ctp:68;68;68
+msgid "Calculating..."
+msgstr "Calculando..."
+
+#: \views\eshop_items\admin_add.ctp:3;3;3
+msgid "Add item for"
+msgstr "Adicionar item para"
+
+#: \views\eshop_items\admin_add.ctp:19;19;19
+#: \views\eshop_items\admin_edit.ctp:14;14;14
+msgid "Description"
+msgstr "Descrição"
+
+#: \views\eshop_items\admin_add.ctp:20;20;20
+#: \views\eshop_items\admin_edit.ctp:15;15;15
+msgid "Our order code (if any)"
+msgstr "Nosso código (se houver)"
+
+#: \views\eshop_items\admin_add.ctp:21;21;21
+#: \views\eshop_items\admin_edit.ctp:16;16;16
+msgid "VAT (in %)"
+msgstr "Total de taxas e impostos (em %)"
+
+#: \views\eshop_items\admin_add.ctp:22;22;22
+#: \views\eshop_items\admin_edit.ctp:17;17;17
+msgid "Price without VAT"
+msgstr "Preço sem taxas"
+
+#: \views\eshop_items\admin_add.ctp:23;23;23
+#: \views\eshop_items\admin_edit.ctp:18;18;18
+msgid "Delivery (days)"
+msgstr "Entrega (dias)"
+
+#: \views\eshop_items\admin_add.ctp:24;24;24
+#: \views\eshop_items\admin_edit.ctp:19;19;19
+msgid "On stock (pcs.)"
+msgstr "Em estoque (Quantidade de peças)"
+
+#: \views\eshop_items\admin_add.ctp:25;25;25
+#: \views\eshop_items\admin_edit.ctp:20;20;20
+msgid "Supplier price"
+msgstr "Preço do fornecedor"
+
+#: \views\eshop_items\admin_add.ctp:26;26;26
+#: \views\eshop_items\admin_edit.ctp:21;21;21
+msgid "Supplier order code"
+msgstr "Código de compra do fornecedor"
+
+#: \views\eshop_items\admin_add.ctp:27;27;27
+#: \views\eshop_items\admin_edit.ctp:22;22;22
+msgid "Discount (in %)"
+msgstr "Desconto (em %)"
+
+#: \views\eshop_items\admin_add.ctp:30;30;30
+#: \views\eshop_items\admin_edit.ctp:25;25;25
+#: \views\eshop_orders\admin_edit.ctp:107;107;107
+#: \views\eshop_suppliers\admin_add.ctp:9;9;9
+#: \views\eshop_suppliers\admin_edit.ctp:10;10;10
+msgid "Submit"
+msgstr "Enviar"
+
+#: \views\eshop_items\admin_edit.ctp:2;2;2
+msgid "Edit item"
+msgstr "Editar item"
+
+#: \views\eshop_items\admin_index.ctp:3;3;3
+msgid "Eshop items for"
+msgstr "Itens da loja para"
+
+#: \views\eshop_items\admin_index.ctp:15;15;15
+msgid "Add item"
+msgstr "Adicionar item"
+
+#: \views\eshop_items\admin_index.ctp:28;28;28
+#: \views\eshop_orders\admin_index.ctp:13;13;13
+#: \views\eshop_suppliers\admin_index.ctp:15;15;15
+msgid "Actions"
+msgstr "Ações"
+
+#: \views\eshop_items\admin_index.ctp:34;34;34
+#: \views\eshop_suppliers\admin_index.ctp:21;21;21
+msgid "Edit"
+msgstr "Editar"
+
+#: \views\eshop_items\admin_index.ctp:36;36;36
+#: \views\eshop_suppliers\admin_index.ctp:23;23;23
+msgid "Delete"
+msgstr "Remover"
+
+#: \views\eshop_items\admin_index.ctp:37;37;37
+msgid "Are you really sure?"
+msgstr "Você tem certeza?"
+
+#: \views\eshop_orders\add.ctp:2;2;2
+msgid "Your delivery informations"
+msgstr "Dados de entrega"
+
+#: \views\eshop_orders\add.ctp:7;7;7
+msgid "Full name"
+msgstr "Nome completo"
+
+#: \views\eshop_orders\add.ctp:8;8;8
+#: \views\eshop_orders\admin_edit.ctp:22;51;22;51;22;51
+msgid "Street"
+msgstr "Rua"
+
+#: \views\eshop_orders\add.ctp:9;9;9
+#: \views\eshop_orders\admin_edit.ctp:24;53;24;53;24;53
+msgid "City"
+msgstr "Cidade"
+
+#: \views\eshop_orders\add.ctp:10;10;10
+#: \views\eshop_orders\admin_edit.ctp:26;55;26;55;26;55
+msgid "ZIP"
+msgstr "CEP"
+
+#: \views\eshop_orders\add.ctp:11;11;11
+#: \views\eshop_orders\admin_edit.ctp:28;57;28;57;28;57
+msgid "Country"
+msgstr "País"
+
+#: \views\eshop_orders\add.ctp:13;13;13
+#: \views\eshop_orders\admin_edit.ctp:42;42;42
+msgid "Phone"
+msgstr "Telefone"
+
+#: \views\eshop_orders\add.ctp:14;14;14
+#: \views\eshop_orders\admin_edit.ctp:40;40;40
+msgid "Email"
+msgstr "Email"
+
+#: \views\eshop_orders\add.ctp:16;16;16
+#, fuzzy
+msgid "Company ID"
+msgstr "Empresa: %s"
+
+#: \views\eshop_orders\add.ctp:17;17;17
+#, fuzzy
+msgid "Company VAT ID"
+msgstr "Empresa  VAT ID: %s"
+
+#: \views\eshop_orders\add.ctp:21;21;21
+#: \views\eshop_orders\admin_edit.ctp:64;64;64
+msgid "Payement"
+msgstr "Pagamento"
+
+#: \views\eshop_orders\add.ctp:22;22;22
+#: \views\eshop_orders\admin_edit.ctp:62;62;62
+msgid "Shipping"
+msgstr "Entrega"
+
+#: \views\eshop_orders\add.ctp:24;24;24
+#: \views\eshop_orders\admin_edit.ctp:67;67;67
+msgid "Note"
+msgstr "Nota ou informações adicionais"
+
+#: \views\eshop_orders\admin_edit.ctp:4;4;4
+msgid "Edit order"
+msgstr "Editar pedido"
+
+#: \views\eshop_orders\admin_edit.ctp:8;8;8
+msgid "Show all orders"
+msgstr "Mostrar todos os pedidos"
+
+#: \views\eshop_orders\admin_edit.ctp:17;17;17
+msgid "Change status of this order"
+msgstr "Mudar status deste pedido"
+
+#: \views\eshop_orders\admin_edit.ctp:20;49;20;49;20;49
+#: \views\eshop_suppliers\admin_add.ctp:6;6;6
+#: \views\eshop_suppliers\admin_index.ctp:14;14;14
+msgid "Name"
+msgstr "Nome"
+
+#: \views\eshop_orders\admin_edit.ctp:27;29;34;36;43;45;27;29;34;36;43;45;27;29;34;36;43;45
+msgid "N/A"
+msgstr "Nada"
+
+#: \views\eshop_orders\admin_edit.ctp:31;31;31
+msgid "Company data"
+msgstr "Dados da empresa"
+
+#: \views\eshop_orders\admin_edit.ctp:33;33;33
+msgid "Company id. number"
+msgstr ""
+
+#: \views\eshop_orders\admin_edit.ctp:35;35;35
+msgid "Company id. number for Vat"
+msgstr ""
+
+#: \views\eshop_orders\admin_edit.ctp:38;38;38
+msgid "Contact data"
+msgstr "Dados de contato"
+
+#: \views\eshop_orders\admin_edit.ctp:44;44;44
+msgid "Fax"
+msgstr "Fax"
+
+#: \views\eshop_orders\admin_edit.ctp:47;47;47
+msgid "Delivery adress"
+msgstr "Endereço de entrega"
+
+#: \views\eshop_orders\admin_edit.ctp:70;70;70
+msgid "Without note"
+msgstr "Sem informações adicionais"
+
+#: \views\eshop_orders\admin_edit.ctp:72;72;72
+#: \views\eshop_orders\admin_index.ctp:10;10;10
+msgid "Items"
+msgstr "Itens"
+
+#: \views\eshop_orders\admin_edit.ctp:100;100;100
+msgid "Total sum without Vat"
+msgstr "Subtotal"
+
+#: \views\eshop_orders\admin_edit.ctp:102;102;102
+msgid "Total sum with Vat"
+msgstr "Total"
+
+#: \views\eshop_orders\admin_edit.ctp:105;105;105
+msgid "Your notes for this order"
+msgstr "Adicionar observação sobre este pedido"
+
+#: \views\eshop_orders\admin_index.ctp:8;8;8
+msgid "Added"
+msgstr "Adicionado"
+
+#: \views\eshop_orders\admin_index.ctp:9;9;9
+msgid "Client Name"
+msgstr "Nome do cliente"
+
+#: \views\eshop_orders\admin_index.ctp:11;11;11
+msgid "Total sum"
+msgstr "Total"
+
+#: \views\eshop_orders\admin_index.ctp:12;12;12
+msgid "Status"
+msgstr "Status"
+
+#: \views\eshop_orders\admin_index.ctp:19;19;19
+msgid "View"
+msgstr "Ver"
+
+#: \views\eshop_orders\admin_index.ctp:24;24;24
+msgid "pcs."
+msgstr "Peças"
+
+#: \views\eshop_suppliers\admin_add.ctp:2;2;2
+msgid "Add supplier"
+msgstr "Adicionar fornecedor"
+
+#: \views\eshop_suppliers\admin_edit.ctp:2;2;2
+msgid "Edit supplier"
+msgstr "Editar fornecedor"
+
+#: \views\eshop_suppliers\admin_index.ctp:6;6;6
+msgid "New supplier"
+msgstr "Novo fornecedor"
+
+#: \views\eshop_suppliers\admin_index.ctp:24;24;24
+msgid "Are you really sure? Will be deleted all items from this supplier!"
+msgstr "Você tem certeza? Todos os itens deste fornecedor também serão removidos!"
+

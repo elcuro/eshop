@@ -47,14 +47,14 @@ class EshopItemsController extends EshopAppController {
         public function admin_index($node_id = false) {
                 
                 if (!$node_id) {
-                        $this->Session->setFlash(__('Missing node id', true), 'default', 'error');
+                        $this->Session->setFlash(__d( 'eshop', 'Missing node id', true), 'default', 'error');
                 }
                 
                 $items = $this->EshopItem->find('all', array('conditions' => array('node_id' => $node_id)));
                 $node = $this->Node->read(null, $node_id);
 
                 $this->set(compact('items', 'node'));
-                $this->set('title_for_layout', __('Eshop items', true));
+                $this->set('title_for_layout', __d( 'eshop', 'Eshop items', true));
                 
         }
 
@@ -80,17 +80,17 @@ class EshopItemsController extends EshopAppController {
         public function admin_add($node_id = false) {
 
                 if (!$node_id) {
-                        $this->Session->setFlash(__('Add supplier - Missing node id', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Add supplier - Missing node id', true), 'default', array('class' => 'error'));
                         $this->redirect($this->referer());
                 }
 
                 if (!empty($this->data)) {
                         $this->EshopItem->create();
                         if ($this->EshopItem->save($this->data)) {
-                                $this->Session->setFlash(__('Eshop Item has been saved', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'Eshop Item has been saved', true), 'default', array('class' => 'success'));
                                 $this->redirect(array('action' => 'index', $this->data['EshopItem']['node_id']));
                         } else {
-                                $this->Session->setFlash(__('Error during saving item', true), 'default', array('class' => 'error'));
+                                $this->Session->setFlash(__d( 'eshop', 'Error during saving item', true), 'default', array('class' => 'error'));
                         }
                 }
 
@@ -110,17 +110,17 @@ class EshopItemsController extends EshopAppController {
         public function admin_edit($id = false) {
 
                 if (!$id) {
-                        $this->Session->setFlash(__('Missing Item ID', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Missing Item ID', true), 'default', array('class' => 'error'));
                         $this->redirect($this->referer());
                 }
 
                 if (!empty($this->data)) {
                         $this->EshopItem->create();
                         if ($this->EshopItem->save($this->data)) {
-                                $this->Session->setFlash(__('Eshop Item has been updated', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'Eshop Item has been updated', true), 'default', array('class' => 'success'));
                                 $this->redirect(array('action' => 'index', $this->data['EshopItem']['node_id']));
                         } else {
-                                $this->Session->setFlash(__('Error during updating item', true), 'default', array('class' => 'error'));
+                                $this->Session->setFlash(__d( 'eshop', 'Error during updating item', true), 'default', array('class' => 'error'));
                         }
                 }
 
@@ -140,15 +140,15 @@ class EshopItemsController extends EshopAppController {
         public function admin_delete($id) {
 
                 if (!$id) {
-                        $this->Session->setFlash(__('Missing Item ID', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Missing Item ID', true), 'default', array('class' => 'error'));
                         $this->redirect($this->referer());
                 }
 
                 if($this->EshopItem->delete($id)) {
-                        $this->Session->setFlash(__('Item successfully deleted', true), 'default', array('class' => 'success'));
+                        $this->Session->setFlash(__d( 'eshop', 'Item successfully deleted', true), 'default', array('class' => 'success'));
                         $this->redirect($this->referer());
                 } else {
-                        $this->Session->setFlash(__('Error occured while deleting item', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Error occured while deleting item', true), 'default', array('class' => 'error'));
                         $this->redirect($this->referer());
                 }
 

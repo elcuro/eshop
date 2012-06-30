@@ -57,7 +57,7 @@ class EshopOrdersController extends EshopAppController {
          */
         public function admin_index() {
 
-                $this->set('title_for_layout', __('Orders evidence', true));
+                $this->set('title_for_layout', __d( 'eshop', 'Orders evidence', true));
 
                 $orders = $this->EshopOrder->find('all', array(
                     'order' => 'EshopOrder.created DESC'
@@ -81,17 +81,17 @@ class EshopOrdersController extends EshopAppController {
         public function admin_edit($id = null) {
 
                 if (is_null($id)) {
-                        $this->Session->setFlash(__('Missing Order ID', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Missing Order ID', true), 'default', array('class' => 'error'));
                         $this->redirect(array('action' => 'index'));
                 }
 
                 if (!empty($this->data)) {
                         $this->EshopOrder->create();
                         if ($this->EshopOrder->save($this->data)) {
-                                $this->Session->setFlash(__('The Order has been updated', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'The Order has been updated', true), 'default', array('class' => 'success'));
                                 $this->redirect(array('action' => 'index'));
                         } else {
-                                $this->Session->setFlash(__('Error during order updating, contact admin', true), 'default', array('class' => 'error'));
+                                $this->Session->setFlash(__d( 'eshop', 'Error during order updating, contact admin', true), 'default', array('class' => 'error'));
                         }
                 }
 
@@ -110,7 +110,7 @@ class EshopOrdersController extends EshopAppController {
                 $last_page = $this->Session->read("Eshop.last_page");
 
                 if (empty($items)) {
-                        $this->Session->setFlash(__('No items for create order', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'No items for create order', true), 'default', array('class' => 'error'));
                         $this->redirect($last_page);
                 }
 
@@ -125,7 +125,7 @@ class EshopOrdersController extends EshopAppController {
                                         . '<eshop@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])).'>';
                                 $this->Email->to = $this->data['EshopOrder']['contact_email'];
                                 $this->Email->bcc = array(Configure::read('Eshop.email'));
-                                $this->Email->subject = '[' . Configure::read('Site.title') . '] ' . __('New order', true);
+                                $this->Email->subject = '[' . Configure::read('Site.title') . '] ' . __d( 'eshop', 'New order', true);
                                 $this->Email->template = 'confirm_order';
                                 $this->Email->sendAs = 'html';
                                 $this->set('items', $this->EshopItem->findCalculatedBasketItems($items));
@@ -133,10 +133,10 @@ class EshopOrdersController extends EshopAppController {
                                 $this->Email->send();
 
                                 $this->Session->delete('Eshop');
-                                $this->Session->setFlash(__('Your order was succesfully sended. Check confirmation email in your mailbox', true), 'default', array('class' => 'success'));
+                                $this->Session->setFlash(__d( 'eshop', 'Your order was succesfully sended. Check confirmation email in your mailbox', true), 'default', array('class' => 'success'));
                                 $this->redirect($last_page);
                         }
-                        $this->Session->setFlash(__('Error during order saving', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Error during order saving', true), 'default', array('class' => 'error'));
                 }
 
                 $this->set(compact('last_page'));

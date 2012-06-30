@@ -30,7 +30,7 @@ class EshopBasketController extends EshopAppController {
                 $this->Session->write('Eshop.items', $items);
                 $this->Session->write('Eshop.last_page', $this->referer());
 
-                $this->Session->setFlash(__('Eshop Item has been added', true), 'default', array('class' => 'success'));
+                $this->Session->setFlash(__d( 'eshop', 'Eshop Item has been added', true), 'default', array('class' => 'success'));
                 $this->redirect(array('plugin' => 'eshop', 'controller' => 'eshop_basket', 'action' => 'view'));
 
 	}
@@ -44,12 +44,12 @@ class EshopBasketController extends EshopAppController {
 	function delete($item_id = null) {
 
                 if (!$item_id) {
-                        $this->Session->setFlash(__('Wrong item_id for delete', true), 'default', array('class' => 'error'));
+                        $this->Session->setFlash(__d( 'eshop', 'Wrong item_id for delete', true), 'default', array('class' => 'error'));
                 } else {
                         $session_items = $this->Session->read('Eshop.items');
                         unset($session_items[$item_id]);
                         $this->Session->write('Eshop.items', $session_items);
-                        $this->Session->setFlash(__('Item was removed from basket', true), 'default', array('class' => 'success'));
+                        $this->Session->setFlash(__d( 'eshop', 'Item was removed from basket', true), 'default', array('class' => 'success'));
                 }
                 
                 $this->redirect(array('plugin' => 'eshop', 'controller' => 'eshop_basket', 'action' => 'view'));
@@ -68,16 +68,26 @@ class EshopBasketController extends EshopAppController {
                 $session_items = array();
                 $session_items = $this->Session->read('Eshop.items');
 
-                $items = array();
-                foreach ($session_items as $item_id => $item_count) {
-                        $data = array();
-                        $this->EshopItem->unbindModel(
-                                array('belongsTo' => array('EshopSupplier'))
-                        );
-			$data = $this->EshopItem->findById($item_id);
-                        $data['count'] = $item_count;
-                        $items[] = $data;
-		}
+                
+                
+                // prevent the error with empty cart
+                if( isset( $session_items ) && !empty( $session_items ) )
+                {
+                
+                	$items = array();
+	                foreach ($session_items as $item_id => $item_count)
+	                {
+	                    $data = array();
+	                    $this->EshopItem->unbindModel(
+	                            array('belongsTo' => array('EshopSupplier'))
+	                    );
+	                    
+						$data = $this->EshopItem->findById($item_id);
+			            $data['count'] = $item_count;
+			            $items[] = $data;
+					}
+                }
+                
 		$this->set(compact('items', 'referer'));
 
 	}

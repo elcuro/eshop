@@ -53,6 +53,21 @@ For showing item directly add
 to your node view file e.g. /app/views/themed/mytheme/nodes/view_product.ctp
 
 
+Internationalization
+-------------------------------
+To translate this plugin to your language (assuming you do 
+not have the translation) usually install this plugin, open 
+your command prompt and navigate to the directory of the 
+plugin /app/plugins/eshop and run cake i18n extract and 
+follow the instructions.
+
+The generated file will be named eshop.pot rename 
+it eshop.po and place it in the 
+/app/plugins/[eshop]/locale/YOUR_LANGUAGE/LC_MESSAGES/[eshop].po
+
+The translation of the content can be made using the 
+PoEdit http://www.poedit.net/
+
 
 Next steps
 -------------------------------

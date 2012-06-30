@@ -1,6 +1,6 @@
 <div class="items index">
         <h2>
-                <?php __('Eshop items for'); ?>&nbsp;
+                <?php __d( 'eshop', 'Eshop items for'); ?>&nbsp;
                 <?php
                 echo $html->link($node['Node']['title'], array(
                     'plugin' => false,
@@ -12,7 +12,7 @@
 
         <div class="actions">
                 <ul>
-                        <li><?php echo $html->link(__('Add item', true), array('action'=>'add', $node['Node']['id'])); ?></li>
+                        <li><?php echo $html->link(__d( 'eshop', 'Add item', true), array('action'=>'add', $node['Node']['id'])); ?></li>
                 </ul>
         </div>
 
@@ -20,21 +20,21 @@
         <?php
         $tableHeaders =  $html->tableHeaders(array(
             'id',
-            __('Title', true),
-            __('Price (without VAT)', true),
-            __('Delivery (in days)', true),
-            __('Discount (%)', true),
-            __('Supplier', true),
-            __('Actions', true),
+            __d( 'eshop', 'Title', true),
+            __d( 'eshop', 'Price (without VAT)', true),
+            __d( 'eshop', 'Delivery (in days)', true),
+            __d( 'eshop', 'Discount (%)', true),
+            __d( 'eshop', 'Supplier', true),
+            __d( 'eshop', 'Actions', true),
         ));
         echo $tableHeaders;
 
         $rows = array();
         foreach ($items as $item) {
-                $actions = $html->link(__('Edit', true), array(
+                $actions = $html->link(__d( 'eshop', 'Edit', true), array(
                     'controller' => 'eshop_items', 'action' => 'edit', $item['EshopItem']['id']));
-                $actions .= ' ' . $html->link(__('Delete', true), array(
-                    'controller' => 'eshop_items', 'action' => 'delete', $item['EshopItem']['id']), null, __('Are you really sure?', true));
+                $actions .= ' ' . $html->link(__d( 'eshop', 'Delete', true), array(
+                    'controller' => 'eshop_items', 'action' => 'delete', $item['EshopItem']['id']), null, __d( 'eshop', 'Are you really sure?', true));
 
                 $rows[] = array(
                     $item['EshopItem']['id'],

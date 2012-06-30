@@ -1,5 +1,5 @@
 <div class="suppliers form">
-        <h2><?php __('Edit supplier'); ?></h2>
+        <h2><?php __d( 'eshop', 'Edit supplier'); ?></h2>
         <?php echo $form->create('EshopSupplier');?>
         <fieldset>
                 <?php
@@ -7,5 +7,5 @@
                 echo $form->input('name',array('label' => __('Name', true)));
                 ?>
         </fieldset>
-        <?php echo $form->end('Submit');?>
+        <?php echo $form->end(__d( 'eshop', 'Submit', true ));?>
 </div>
